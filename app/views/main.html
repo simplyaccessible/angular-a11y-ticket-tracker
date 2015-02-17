@@ -1,0 +1,68 @@
+<div id="flash-message" class="alert alert-success" ng-show="flash.getMessage()" >
+    <p>
+        <a href="#clearAlertMessages" ng-click="flash.clearMessage($event);">
+            <strong>Success:</strong> {{flash.getMessage()}}
+            <span class="glyphicon glyphicon-remove" style="float:right">
+                <span class="visuallyhidden">Click to hide message</span>
+            </span>
+        </a>
+    </p>
+</div>
+<section id="page-sub-header">
+    <h1 class="pull-left">{{title}}</h1>
+    <a ng-href="#/create" class="btn btn-primary pull-right" id="add-new-ticket">Add new ticket</a>
+</section>
+<section  id="ticket-list">
+    <div id="ticket-filter-box">
+        <label for="ticket-filter">Search Tickets: </label>
+        <input type="text" id="ticket-filter" ng-model="search" class="search-query" placeholder="Search">
+        <div role="region" id="ticket-table-info" aria-live="polite">Showing {{(tickets|filter:search).length}} of {{tickets.length}}</div>
+    </div>
+    <h2 class="pull-left">Tickets</h2>
+    <table class="table">
+        <thead>
+            <th scope="col" class="first">Summary</th>
+            <th scope="col">WCAG SC</th>
+            <th scope="col">Severity</th>
+            <th scope="col">Resolved</th>
+            <th scope="col">Actions</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(id, ticket) in tickets | filter:search" id="{{ticket.$id}}" set-last-ticket-id-focus>
+                <th scope="row" ng-class="{showdetails:index==$index}" id="ticket-{{$index}}">
+                    <a href="#expandDetails-{{ ticket.$id }}" ng-click="toggleTicketDetails($event,$index)">
+                        <span class="glyphicon glyphicon-{{ index==$index ? 'minus' : 'plus' }}-sign"></span>
+                        {{ ticket.summary  }}
+                        <span class="visuallyhidden">{{ index==$index ? " - click to hide details" : " - click to show details"}}</span>
+                    </a>
+                    <div class="ticket-details">
+                        <h2>Description:</h2>
+                        <span>{{ticket.description}}</span>
+                        <h2>Recommended Fix:</h2>
+                        <span>{{ticket.fix}}</span>
+                    </div>
+                </th>
+                <td> {{ ticket.wcagSC }} </td>
+                <td> {{ ticket.severity }} </td>
+                <td>
+                    <span class="glyphicon glyphicon-{{ ticket.resolved == true ? 'ok' : 'remove' }}">
+                        <span class="visuallyhidden">{{ ticket.resolved == true ? " resolved" : "unresolved" }}</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="#/edit/{{ ticket.$id }}" class="edit-btn">
+                        <span class="glyphicon glyphicon-edit">
+                            <span class="visuallyhidden">Edit {{ ticket.summary  }}</span>
+                        </span></a>
+                    <a class="delete-record" href="#/remove/{{ ticket.$id }}"
+                       ng-confirm-click="Are you sure you want to delete this record?"
+                       ng-click="remove(id);">
+                        <span class="glyphicon glyphicon-trash">
+                            <span class="visuallyhidden">Delete {{ ticket.summary  }}</span>
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

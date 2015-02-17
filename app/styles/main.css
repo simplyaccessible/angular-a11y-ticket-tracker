@@ -1,0 +1,265 @@
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.header #sa-logo {
+    width: 11em;
+    margin-bottom: 0.2em;
+}
+
+#top-nav{
+    display: inline-block;
+    margin-top: 1.8em;
+}
+
+/* Make the masthead heading the same height as the navigation */
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+/*
+h1:focus {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top: 3px solid #3478C1;
+    border-bottom: 3px solid #3478C1;
+}
+/*
+
+
+.nav-pills > li {
+    margin-bottom: 0.5em;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+#page-sub-header h1{
+    margin-top: 0px;
+}
+
+#page-sub-header hr{
+    clear: both;
+}
+
+#ticket-list{
+    clear: both;
+    padding: 1em 0;
+}
+
+#ticket-filter-box{
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+#ticket-filter{
+    margin: 0.5em 0px;
+}
+
+/* Customize container */
+@media (min-width: 48em) {
+    .container {
+        max-width: 48em;
+    }
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute !important;
+}
+
+
+
+
+tr .ticket-details{
+    display: none;
+}
+
+tr .showdetails .ticket-details{
+    display: block;
+}
+
+thead th{
+    text-align: center;
+}
+thead th.first{
+    text-align: left;
+}
+
+.table > tbody > tr > th{
+    font-weight: normal;
+    padding-left: 1.8em;
+}
+.table > tbody > tr > th span.glyphicon{
+    margin-left: -1.4em;
+}
+
+tbody tr td{
+    text-align: center;
+}
+
+tbody tr h2{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+tbody tr td .glyphicon-remove{
+    color: #8c0000;
+}
+tbody tr td .glyphicon-ok{
+    color: green;
+}
+
+tbody tr td a.delete-record{
+    margin-left: 10px;
+}
+
+tbody tr th a{
+    font-weight: bold;
+}
+
+.ticket-details span{white-space: pre}
+
+
+/* ========== Form & Validation ======== */
+
+label{
+    width: 100%;
+    margin-bottom: 0px;
+
+}
+
+#error-bucket{
+    display: none;
+}
+
+.error-notice{
+    background-color: #aa4646;
+    color: #fff;
+    border-radius: 5px;
+    padding: .6em 1em;
+}
+
+.has-error em.error {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #aa4646;
+    color: #fff;
+    padding: .6em 1em .4em;
+    font-size: .85em;
+    display: block;
+    width: 98%;
+    font-style: normal;
+}
+
+.has-error .form-control{
+    border-top-left-radius: 0px;
+ }
+
+.required-star{
+    margin-bottom: 0.8em;
+}
+
+
+/* ========== Flash Message ======== */
+
+
+#flash-message a{
+    color: #096600;
+    display: block;
+    padding: 4px
+}
+#flash-message a:hover,
+#flash-message a:focus{
+    color: #000;
+}
+
+/* ========== Pill Nav Overrides ======== */
+
+.nav > li > a{
+    margin-left: 4px;
+    border: solid 1px #FFFFFF;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    border: solid 1px #3276b1;
+}
+.nav > li.active > a:hover,
+.nav > li.active > a:focus {
+    text-decoration: none;
+}
+
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: #ffffff;
+    background-color: #3276b1;
+}
+
+.nav > li .visuallyhidden{
+    display: none;
+}
+
+.nav > li.active .visuallyhidden{
+    display: inline;
+}
+
+
+
+/* Responsive: Portrait tablets and down */
+@media screen and (max-width: 48em) {
+
+    .header{
+        text-align: center;
+    }
+
+    .header h1{
+        text-align: center;
+        width: 100%;
+    }
+
+    .header ul.nav{
+        float: none !important;
+        display: inline-block;
+    }
+
+    #top-nav{
+        width: 100%;
+    }
+}

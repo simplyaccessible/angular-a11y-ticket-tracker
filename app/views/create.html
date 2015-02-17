@@ -1,0 +1,72 @@
+<h1>{{title}}</h1>
+<form name="createForm"  novalidate>
+    <p>All fields marked with an <img src="images/required.gif" alt="asterisk" class="required-star"> are required.</p>
+    <p id="error-bucket" class="error-notice" ng-show="createForm.$invalid"><img src="images/error.png" alt=""> Please correct the errors below.</p>
+    <div class="form-group" ng-class="{ 'has-error' : createForm.summary.$invalid && submitted }">
+        <label for="summary">
+            Summary:
+            <img src="images/required.gif" alt="Required" class="required-star">
+            <em class="error">
+                <span class="error" ng-show="createForm.summary.$invalid && submitted">Must not be blank.</span>
+                <span class="error" ng-show="createForm.summary.$error.minlength && submitted">Summary needs to be at least 2 characters long.</span>
+            </em>
+        </label>
+        <input type="text"  id="summary"  name="summary" ng-model="summary" class="form-control" required  ng-minlength="2">
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : createForm.description.$invalid && submitted }">
+        <label for="description">
+            Description:
+            <img src="images/required.gif" alt="Required" class="required-star">
+            <em class="error">
+                <span class="error" ng-show="createForm.description.$invalid && submitted">Must not be blank.</span>
+            </em>
+        </label>
+        <textarea id="description"  name="description"  ng-model="description"  class="form-control" required ></textarea>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : createForm.wcagSC.$invalid && submitted }">
+        <label for="wcagSC">
+            WCAG success criterion:
+            <img src="images/required.gif" alt="Required" class="required-star">
+            <em class="error">
+                <span class="error" ng-show="createForm.wcagSC.$invalid && submitted">Must have a selection.</span>
+            </em>
+        </label>
+        <select  id="wcagSC" name="wcagSC" ng-model="wcagSC"  class="form-control" ng-options="wcagSC.value as wcagSC.criterion for wcagSC in wcagSCList" required >
+            <option value="">-- choose criterion --</option>
+        </select>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : createForm.severity.$invalid && submitted }">
+        <label for="severity">
+            Severity:
+            <img src="images/required.gif" alt="Required" class="required-star">
+            <em class="error">
+                <span class="error" ng-show="createForm.severity.$invalid && submitted">Must have a selection.</span>
+            </em>
+        </label>
+        <select id="severity" name="severity" ng-model="severity" class="form-control" ng-options="severity.value as severity.level for severity in severityList" required >
+            <option value="">-- choose Severity --</option>
+        </select>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : createForm.fix.$invalid && submitted }">
+        <label for="fix">
+            Recommended accessibility fix:
+            <img src="images/required.gif" alt="Required" class="required-star">
+            <em class="error">
+                <span class="error" ng-show="createForm.fix.$invalid && submitted">Must not be blank.</span>
+            </em>
+        </label>
+        <textarea id="fix" name="fix" ng-model="fix" class="form-control" required ></textarea>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : createForm.severity.$invalid && submitted }">
+        <label for="resolved">
+            Resolved:
+        </label>
+        <input id="resolved" name="resolved" type="checkbox" ng-model="resolved">
+    </div>
+    <div class="form-group">
+        <input type="button" value="Cancel" class="btn btn-primary" ng-click="go('main')">
+
+        <!--  <button type="button" - stops form submission on general keyboard enter key -->
+        <button type="button" class="btn btn-primary" ng-click="add(createForm.$invalid)">Save</button>
+    </div>
+</form>
