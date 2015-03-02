@@ -4,6 +4,23 @@ body {
     padding-bottom: 20px;
 }
 
+
+a{
+    color: #397AB2;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #397AB2;
+    border-color: #397AB2;
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+    background-color: #2C5E89;
+}
+
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -65,6 +82,11 @@ h1:focus {
     clear: both;
 }
 
+#app-notice{
+    clear: both;
+    padding: 1.5em 0em;
+}
+
 #ticket-list{
     clear: both;
     padding: 1em 0;
@@ -83,8 +105,12 @@ h1:focus {
 
 /* Customize container */
 @media (min-width: 48em) {
-    .container {
+    .container{
         max-width: 48em;
+        width: 48em;
+    }
+    tbody th{
+        width: 50%;
     }
 }
 
@@ -154,7 +180,6 @@ tbody tr th a{
     font-weight: bold;
 }
 
-.ticket-details span{white-space: pre}
 
 
 /* ========== Form & Validation ======== */
@@ -190,7 +215,7 @@ label{
 
 .has-error .form-control{
     border-top-left-radius: 0px;
- }
+}
 
 .required-star{
     margin-bottom: 0.8em;
@@ -219,18 +244,23 @@ label{
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-    border: solid 1px #3276b1;
+    border: solid 1px #2C5E89;
 }
 .nav > li.active > a:hover,
 .nav > li.active > a:focus {
     text-decoration: none;
 }
 
+.nav-pills > li.active > a{
+    background-color: #397AB2;
+}
+
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
     color: #ffffff;
-    background-color: #3276b1;
+    background-color: #2C5E89;
 }
+
 
 .nav > li .visuallyhidden{
     display: none;

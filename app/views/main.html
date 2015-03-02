@@ -45,9 +45,8 @@
                 <td> {{ ticket.wcagSC }} </td>
                 <td> {{ ticket.severity }} </td>
                 <td>
-                    <span class="glyphicon glyphicon-{{ ticket.resolved == true ? 'ok' : 'remove' }}">
-                        <span class="visuallyhidden">{{ ticket.resolved == true ? " resolved" : "unresolved" }}</span>
-                    </span>
+                    <span class="glyphicon glyphicon-{{ ticket.resolved == true ? 'ok' : 'remove' }}" aria-hidden="true"></span>
+                    <span class="visuallyhidden">{{ ticket.resolved == true ? " resolved" : "unresolved" }}</span>
                 </td>
                 <td>
                     <a href="#/edit/{{ ticket.$id }}" class="edit-btn">
