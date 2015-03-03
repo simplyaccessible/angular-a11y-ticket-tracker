@@ -16,7 +16,7 @@
     <div id="ticket-filter-box">
         <label for="ticket-filter">Search Tickets: </label>
         <input type="text" id="ticket-filter" ng-model="search" class="search-query" placeholder="Search">
-        <div role="status" id="ticket-table-info" aria-live="polite">Showing {{(tickets|filter:search).length}} of {{tickets.length}}</div>
+        <div role="status" id="ticket-table-info" aria-live="polite" aria-atomic="true">Showing {{(tickets|filter:search).length}} of {{tickets.length}}</div>
     </div>
     <h2 class="pull-left">Tickets</h2>
     <table class="table">
