@@ -41,7 +41,7 @@ angular.module('a11yTicketApp')
 
             // Add delay to allow time for element to render then set focus to header
             $timeout(function() {
-                $('#ticket-'+ index + " h2").first().attr("tabIndex",-1).focus()
+                $('#ticket-'+ index + " h3").first().attr("tabIndex",-1).focus()
             }, 0);
         };
 

@@ -30,15 +30,17 @@
         <tbody>
             <tr ng-repeat="(id, ticket) in tickets | filter:search" id="{{ticket.$id}}" set-last-ticket-id-focus>
                 <th scope="row" ng-class="{showdetails:index==$index}" id="ticket-{{$index}}">
-                    <a href="#expandDetails-{{ ticket.$id }}" ng-click="toggleTicketDetails($event,$index)">
-                        <span class="glyphicon glyphicon-{{ index==$index ? 'minus' : 'plus' }}-sign"></span>
-                        {{ ticket.summary  }}
-                        <span class="visuallyhidden">{{ index==$index ? " - click to hide details" : " - click to show details"}}</span>
-                    </a>
+                    <h2>
+                        <a href="#expandDetails-{{ ticket.$id }}" ng-click="toggleTicketDetails($event,$index)">
+                            <span class="glyphicon glyphicon-{{ index==$index ? 'minus' : 'plus' }}-sign"></span>
+                            {{ ticket.summary  }}
+                            <span class="visuallyhidden">{{ index==$index ? " - click to hide details" : " - click to show details"}}</span>
+                        </a>
+                    </h2>
                     <div class="ticket-details">
-                        <h2>Description:</h2>
+                        <h3>Description:</h3>
                         <span>{{ticket.description}}</span>
-                        <h2>Recommended Fix:</h2>
+                        <h3>Recommended Fix:</h3>
                         <span>{{ticket.fix}}</span>
                     </div>
                 </th>

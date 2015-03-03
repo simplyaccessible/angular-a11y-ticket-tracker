@@ -161,9 +161,16 @@ tbody tr td{
 }
 
 tbody tr h2{
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+tbody tr h3{
     font-size: 1.2em;
     font-weight: bold;
 }
+
 
 tbody tr td .glyphicon-remove{
     color: #8c0000;
