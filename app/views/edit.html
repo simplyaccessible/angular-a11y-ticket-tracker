@@ -7,8 +7,8 @@
             Summary:
             <img src="images/required.gif" alt="Required" class="required-star">
             <em class="error">
-                <span class="error" ng-show="editForm.summary.$invalid && submitted">Must not be blank.</span>
-                <span class="error" ng-show="editForm.summary.$error.minlength && submitted">Summary needs to be at least 2 characters long.</span>
+                <span class="error" ng-if="editForm.summary.$invalid && submitted">Must not be blank.</span>
+                <span class="error" ng-if="editForm.summary.$error.minlength && submitted">Summary needs to be at least 2 characters long.</span>
             </em>
         </label>
         <input type="text"  id="summary"  name="summary" ng-model="tickets.summary" class="form-control" required  ng-minlength="2">
@@ -18,7 +18,7 @@
             Description:
             <img src="images/required.gif" alt="Required" class="required-star">
             <em class="error">
-                <span class="error" ng-show="editForm.description.$invalid && submitted">Must not be blank.</span>
+                <span class="error" ng-if="editForm.description.$invalid && submitted">Must not be blank.</span>
             </em>
         </label>
         <textarea id="description"  name="description"  ng-model="tickets.description"  class="form-control" required ></textarea>
@@ -28,7 +28,7 @@
             WCAG success criterion:
             <img src="images/required.gif" alt="Required" class="required-star">
             <em class="error">
-                <span class="error" ng-show="editForm.wcagSC.$invalid && submitted">Must have a selection.</span>
+                <span class="error" ng-if="editForm.wcagSC.$invalid && submitted">Must have a selection.</span>
             </em>
         </label>
         <select  id="wcagSC" name="wcagSC" ng-model="tickets.wcagSC"  class="form-control" ng-options="wcagSC.value as wcagSC.criterion for wcagSC in wcagSCList" required >
@@ -39,7 +39,7 @@
             Severity:
             <img src="images/required.gif" alt="Required" class="required-star">
             <em class="error">
-                <span class="error" ng-show="editForm.severity.$invalid && submitted">Must have a selection.</span>
+                <span class="error" ng-if="editForm.severity.$invalid && submitted">Must have a selection.</span>
             </em>
         </label>
         <select id="severity" name="severity" ng-model="tickets.severity" class="form-control" ng-options="severity.value as severity.level for severity in severityList" required >
@@ -50,7 +50,7 @@
             Recommended accessibility fix:
             <img src="images/required.gif" alt="Required" class="required-star">
             <em class="error">
-                <span class="error" ng-show="editForm.fix.$invalid && submitted">Must not be blank.</span>
+                <span class="error" ng-if="editForm.fix.$invalid && submitted">Must not be blank.</span>
             </em>
         </label>
         <textarea id="fix" name="fix" ng-model="tickets.fix" class="form-control" required ></textarea>
